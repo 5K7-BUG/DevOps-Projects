@@ -1,5 +1,6 @@
-package com.stalin.demo;
+package com.satish.demo;
 
+import com.satish.demo.DemoWorkshopApplication;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonMappingException;
