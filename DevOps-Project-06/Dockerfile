@@ -1,3 +1,3 @@
-FROM openjdk:8
-ADD jarstaging/com/satish/demo-workshop/2.1.2/demo-workshop-2.1.2.jar sample_app.jar 
-ENTRYPOINT [ "java", "-jar", "sample_app.jar" ]
+FROM eclipse-temurin:8-jre
+COPY target/demo-workshop-2.1.2.jar app.jar
+ENTRYPOINT [ "java", "-jar", "app.jar" ]
