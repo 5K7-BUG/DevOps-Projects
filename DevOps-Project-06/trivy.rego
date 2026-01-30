@@ -1,18 +1,14 @@
 package trivy.security
 
-default allow = true
+default allow = false
 
 critical_count := count([
   v |
-  v := input.Results[_].Vulnerabilities[_]
+  some i, j
+  v := input.Results[i].Vulnerabilities[j]
   v.Severity == "CRITICAL"
 ])
 
-deny[msg] {
-  critical_count > 0
-  msg := sprintf("Build blocked: %d CRITICAL vulnerabilities found", [critical_count])
-}
-
-allow {
+allow if {
   critical_count == 0
 }
